@@ -13,15 +13,6 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31" >
         <activity
-
-            android:name=".AutoActivity"
-            android:exported="false" />
-        <!-- This activity automatically declared in AndroidManifest -->
-        <activity android:name=".newActivity" >
-
-            <!-- Create new activity (without automatic declaration) -->
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>

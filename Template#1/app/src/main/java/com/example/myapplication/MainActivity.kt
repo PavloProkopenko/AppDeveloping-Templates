@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                         result.text = "You are Team Lead or higher"
                     }
                 }
+                // Changing my learning way
             }
         }
 

@@ -2,10 +2,6 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.TextView
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,22 +30,29 @@ class MainActivity : AppCompatActivity() {
 //                bindingClass.result.text = "You are a Senior"
 //            }
 
+            bindingClass.apply {
+
 //            Variant with WHEN
-            when(experience) {
-                in 0 ..1 -> {
-                    bindingClass.result.text = "You are a Trainee"
-                }
-                in 1..2 -> {
-                    bindingClass.result.text = "You are a Junior"
-                }
-                in 2..5 -> {
-                    bindingClass.result.text = "You are a Middle"
-                }
-                in 5..8 -> {
-                    bindingClass.result.text = "You are a Senior"
-                }
-                else -> {
-                    bindingClass.result.text = "You are Team Lead or higher"
+                when (experience) {
+                    in 0..1 -> {
+                        result.text = "You are a Trainee"
+                    }
+
+                    in 1..2 -> {
+                        result.text = "You are a Junior"
+                    }
+
+                    in 2..5 -> {
+                        result.text = "You are a Middle"
+                    }
+
+                    in 5..8 -> {
+                        result.text = "You are a Senior"
+                    }
+
+                    else -> {
+                        result.text = "You are Team Lead or higher"
+                    }
                 }
             }
         }

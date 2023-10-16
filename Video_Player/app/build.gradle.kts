@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.Prokopenko.video_player"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.Prokopenko.video_player"

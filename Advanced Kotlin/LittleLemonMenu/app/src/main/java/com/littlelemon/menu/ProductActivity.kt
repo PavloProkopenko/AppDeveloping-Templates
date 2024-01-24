@@ -13,7 +13,7 @@ class ProductActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val productItem =
-            ProductItem(title, price, category, image)//todo replace with the passed values from intent
+            ProductItem(title, price, category, image)
         setContent { ProductDetails(productItem) }
     }
 

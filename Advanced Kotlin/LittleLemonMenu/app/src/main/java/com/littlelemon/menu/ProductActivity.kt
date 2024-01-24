@@ -6,10 +6,14 @@ import androidx.activity.compose.setContent
 
 class ProductActivity : ComponentActivity() {
 
+    private var title = intent.getStringExtra(KEY_TITLE) ?: "Product Details"
+    private var price = intent.getDoubleExtra(KEY_PRICE, 0.0)
+    private var category = intent.getStringExtra(KEY_CATEGORY) ?: "Unknown"
+    private var image = intent.getIntExtra(KEY_IMAGE, -1)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val productItem =
-            ProductItem("", 0.0, "", -1)//todo replace with the passed values from intent
+            ProductItem(title, price, category, image)//todo replace with the passed values from intent
         setContent { ProductDetails(productItem) }
     }
 

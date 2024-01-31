@@ -1,5 +1,6 @@
 package com.littlelemon.menu
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -30,15 +31,15 @@ class MainActivity : ComponentActivity() {
         ProductsGrid(products = products, startProductActivity = this::startProductActivity)
     }
 
-    private fun startProductActivity(productItem: ProductItem) {
-        val intent = Intent(this, ProductActivity::class.java)
+    private fun startProductActivity(context: Context, productItem: ProductItem) {
+        val intent = Intent(this, ProductActivity::class.java).apply {
+            intent.putExtra(ProductActivity.KEY_TITLE, productItem.title)
+            intent.putExtra(ProductActivity.KEY_PRICE, productItem.price)
+            intent.putExtra(ProductActivity.KEY_IMAGE, productItem.image)
+            intent.putExtra(ProductActivity.KEY_CATEGORY, productItem.category)
+        }
 
-        intent.putExtra(ProductActivity.KEY_TITLE, productItem.title)
-        intent.putExtra(ProductActivity.KEY_PRICE, productItem.price)
-        intent.putExtra(ProductActivity.KEY_IMAGE, productItem.image)
-        intent.putExtra(ProductActivity.KEY_CATEGORY, productItem.category)
-        
-        startActivity(intent)
+        context.startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
